@@ -1,9 +1,17 @@
-﻿<Application x:Class="TUSB_ProgressViewer.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:TUSB_ProgressViewer"
-             StartupUri="MainWindow.xaml">
+﻿<prism:PrismApplication
+    x:Class="TUSB_ProgressViewer.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:cnv="clr-namespace:TUSB_ProgressViewer.Converters">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
+                <ResourceDictionary Source="Styles/IslandListStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <cnv:DoubleMultiplierConverter x:Key="DoubleMultiplier"/>
+        </ResourceDictionary>
     </Application.Resources>
-</Application>
+</prism:PrismApplication>

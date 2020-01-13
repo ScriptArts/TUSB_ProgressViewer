@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TUSB_ProgressViewer
+namespace TUSB_ProgressViewer.Controls
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// IslandCompleteProgress.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class IslandCompleteProgress : UserControl
     {
-        public MainWindow()
+        public IslandCompleteProgress()
         {
             InitializeComponent();
         }

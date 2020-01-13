@@ -1,0 +1,87 @@
+﻿<UserControl
+    x:Name="islandPointer"
+    x:Class="TUSB_ProgressViewer.Controls.IslandPointer"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:TUSB_ProgressViewer.Controls"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Width="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
+    Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}">
+    <Grid>
+        <Path Stroke="#333">
+            <Path.Style>
+                <Style TargetType="Path">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsComplete, ElementName=islandPointer}" Value="True">
+                            <Setter Property="Fill" Value="Lime"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsComplete, ElementName=islandPointer}" Value="False">
+                            <Setter Property="Fill" Value="Gray"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsSelected, ElementName=islandPointer}" Value="True">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Setter Property="StrokeThickness" Value="4"/>
+                            <Setter Property="Data">
+                                <Setter.Value>
+                                    <EllipseGeometry
+                                        Center="{Binding Center, ElementName=islandPointer}"
+                                        RadiusX="0.01"
+                                        RadiusY="0.01">
+                                        <EllipseGeometry.Transform>
+                                            <ScaleTransform ScaleX="{Binding ActualWidth, ElementName=islandPointer}" ScaleY="{Binding ActualHeight, ElementName=islandPointer}"/>
+                                        </EllipseGeometry.Transform>
+                                    </EllipseGeometry>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsSelected, ElementName=islandPointer}" Value="False">
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Setter Property="StrokeThickness" Value="2"/>
+                            <Setter Property="Data">
+                                <Setter.Value>
+                                    <EllipseGeometry
+                                        Center="{Binding Center, ElementName=islandPointer}"
+                                        RadiusX="0.0075"
+                                        RadiusY="0.0075">
+                                        <EllipseGeometry.Transform>
+                                            <ScaleTransform ScaleX="{Binding ActualWidth, ElementName=islandPointer}" ScaleY="{Binding ActualHeight, ElementName=islandPointer}"/>
+                                        </EllipseGeometry.Transform>
+                                    </EllipseGeometry>
+                                </Setter.Value>
+                            </Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Path.Style>
+        </Path>
+        <!--<Path Stroke="Black" StrokeThickness="3" Fill="Lime">
+            <Path.Data>
+                <EllipseGeometry
+                    Center="{Binding Center, ElementName=islandPointer}"
+                    RadiusX="0.01"
+                    RadiusY="0.01">
+                    <EllipseGeometry.Transform>
+                        <ScaleTransform ScaleX="{Binding ActualWidth, ElementName=islandPointer}" ScaleY="{Binding ActualHeight, ElementName=islandPointer}"/>
+                    </EllipseGeometry.Transform>
+                </EllipseGeometry>
+            </Path.Data>
+            <Path.Style>
+                <Style TargetType="Path">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsSelected, ElementName=islandPointer}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsSelected, ElementName=islandPointer}" Value="False">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Path.Style>
+        </Path>-->
+    </Grid>
+</UserControl>
