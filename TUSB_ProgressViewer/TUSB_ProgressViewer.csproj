@@ -124,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\EndSpawnerProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\IslandCompleteProgress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +149,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\EndSpawnerProgress.xaml.cs">
+      <DependentUpon>EndSpawnerProgress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\IslandCompleteProgress.xaml.cs">
       <DependentUpon>IslandCompleteProgress.xaml</DependentUpon>
     </Compile>
@@ -152,12 +159,13 @@
       <DependentUpon>IslandPointer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\DoubleMultiplierConverter.cs" />
-    <Compile Include="Util\Coordinate.cs" />
-    <Compile Include="Util\Island.cs" />
-    <Compile Include="Util\IslandData.cs" />
+    <Compile Include="Models\Coordinate.cs" />
+    <Compile Include="Models\Island.cs" />
+    <Compile Include="Models\IslandData.cs" />
     <Compile Include="Util\IslandDimension.cs" />
     <Compile Include="Util\IslandType.cs" />
     <Compile Include="Util\Messenger.cs" />
+    <Compile Include="Models\World.cs" />
     <Compile Include="ViewModels\IslandCompleteProgressViewModel.cs" />
     <Compile Include="ViewModels\IslandPointerViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -188,6 +196,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -201,6 +212,7 @@
     <Content Include="Lib\OrangeNBT.Data.dll" />
     <Content Include="Lib\OrangeNBT.dll" />
     <Content Include="Lib\OrangeNBT.World.dll" />
+    <Resource Include="Resources\TUSB_EndMap.png" />
     <Resource Include="Resources\TUSB_Map.png" />
   </ItemGroup>
   <ItemGroup />

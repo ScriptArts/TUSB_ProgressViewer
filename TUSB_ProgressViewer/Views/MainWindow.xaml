@@ -21,14 +21,26 @@
     <i:Interaction.Behaviors>
         <behavior:MainWindowBehavior/>
     </i:Interaction.Behaviors>
-    <Grid Background="#303030">
-        <TabControl>
+    <Grid Background="#242424">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <TabControl Grid.Row="0" Background="#303030">
             <TabItem Header="島攻略進捗">
                 <controls:IslandCompleteProgress/>
             </TabItem>
             <TabItem Header="エンド スポナー破壊進捗">
-                
+                <controls:EndSpawnerProgress/>
             </TabItem>
         </TabControl>
+        <Grid Grid.Row="1">
+            <TextBlock
+                Text="{Binding CompleteCount.Value, StringFormat=島攻略数: {0}/50}"
+                Foreground="White"
+                FontSize="30"
+                VerticalAlignment="Center"/>
+            <Button Content="Reload" HorizontalAlignment="Right" Command="{Binding ReloadCommand}"/>
+        </Grid>
     </Grid>
 </Window>

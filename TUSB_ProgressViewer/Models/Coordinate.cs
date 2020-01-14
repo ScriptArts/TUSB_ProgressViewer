@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TUSB_ProgressViewer.Util
+namespace TUSB_ProgressViewer.Models
 {
     /// <summary>
     /// 座標

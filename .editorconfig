@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0612: 型またはメンバーが旧型式です
+dotnet_diagnostic.CS0612.severity = none

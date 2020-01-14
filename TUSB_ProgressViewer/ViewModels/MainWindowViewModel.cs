@@ -8,28 +8,34 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TUSB_ProgressViewer.Models;
 using TUSB_ProgressViewer.Util;
 
 namespace TUSB_ProgressViewer.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        /// <summary>
+        /// タイトルバーのシステムボタンのコマンド
+        /// </summary>
         public ReactiveCommand<string> TitlebarButtonCommand { get; } = new ReactiveCommand<string>();
 
-        public ReactiveProperty<List<Island>> Islands { get; } = new ReactiveProperty<List<Island>>(new List<Island>());
-        public ReactiveProperty<int> CompleteCount { get; } = new ReactiveProperty<int>();
+        /// <summary>
+        /// リロードボタンコマンド
+        /// </summary>
+        public ReactiveCommand ReloadCommand { get; } = new ReactiveCommand();
 
-        [Obsolete]
+        /// <summary>
+        /// 島攻略数
+        /// </summary>
+        public ReactiveProperty<int> CompleteCount => World.CompleteCount;
+
         public MainWindowViewModel()
         {
             TitlebarButtonCommand.Subscribe(x => Messenger.I.GetEvent<PubSubEvent<string>>().Publish(x));
+            ReloadCommand.Subscribe(() => World.Load("E:\\Profiles\\1.10.2\\saves\\The Unusual Skyblock v12.0.9"));
 
-            var world = AnvilWorld.Load("E:\\Profiles\\1.10.2\\saves\\The Unusual Skyblock v12.0.9");
-            foreach (IslandType type in Enum.GetValues(typeof(IslandType)))
-            {
-                Islands.Value.Add(new Island(type, world));
-            }
-            CompleteCount.Value = Islands.Value.Where(x => x.IsComplete).Count();
+            World.Load("E:\\Profiles\\1.10.2\\saves\\The Unusual Skyblock v12.0.8");
         }
     }
 }
