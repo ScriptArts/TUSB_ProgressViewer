@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Name="spawnerPointer"
+    x:Class="TUSB_ProgressViewer.Controls.SpawnerPointer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:TUSB_ProgressViewer.Controls"
+    mc:Ignorable="d">
+    <Grid>
+        <Path Stroke="#333" StrokeThickness="0">
+            <Path.Data>
+                <EllipseGeometry
+                    Center="{Binding Center, ElementName=spawnerPointer}"
+                    RadiusX="0.0012"
+                    RadiusY="0.008">
+                    <EllipseGeometry.Transform>
+                        <ScaleTransform ScaleX="{Binding ActualWidth, ElementName=spawnerPointer}" ScaleY="{Binding ActualHeight, ElementName=spawnerPointer}"/>
+                    </EllipseGeometry.Transform>
+                </EllipseGeometry>
+            </Path.Data>
+            <Path.Style>
+                <Style TargetType="Path">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsBroken, ElementName=spawnerPointer}" Value="True">
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsBroken, ElementName=spawnerPointer}" Value="False">
+                            <Setter Property="Fill" Value="#fa66ff"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Path.Style>
+        </Path>
+    </Grid>
+</UserControl>

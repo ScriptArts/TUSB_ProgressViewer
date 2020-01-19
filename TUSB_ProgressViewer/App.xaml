@@ -7,11 +7,18 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ScrollBarStyle.xaml"/>
                 <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
                 <ResourceDictionary Source="Styles/IslandListStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TabControlStyle.xaml"/>
+                <ResourceDictionary Source="Styles/LoadingViewStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ErrorDialogStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <cnv:DoubleMultiplierConverter x:Key="DoubleMultiplier"/>
+            <cnv:DoubleSubtractorConverter x:Key="DoubleSubtractor"/>
+            <cnv:DoubleDividerConverter x:Key="DoubleDivider"/>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

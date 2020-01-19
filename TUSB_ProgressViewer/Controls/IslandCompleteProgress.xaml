@@ -17,166 +17,21 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Image x:Name="map" Source="../Resources/TUSB_Map.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
-            <Grid
-                Background="#0007"
+            <Image x:Name="map" Source="../Resources/tusb_map.png" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+            <ItemsControl
                 Width="{Binding ActualWidth, ElementName=map}"
                 Height="{Binding ActualHeight, ElementName=map}"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-
-                <!-- ガスト島 -->
-                <controls:IslandPointer Center="0.445,0.577" IsComplete="{Binding Islands[0].IsComplete}" IsSelected="{Binding Islands[0].IsSelected}"/>
-
-                <!-- 荒れ地島 -->
-                <controls:IslandPointer Center="0.405,0.505" IsComplete="{Binding Islands[1].IsComplete}" IsSelected="{Binding Islands[1].IsSelected}"/>
-
-                <!-- シルバーフィッシュ＆エンダーマイト島 -->
-                <controls:IslandPointer Center="0.49,0.413" IsComplete="{Binding Islands[2].IsComplete}" IsSelected="{Binding Islands[2].IsSelected}"/>
-
-                <!-- 山岳島 -->
-                <controls:IslandPointer Center="0.545,0.371" IsComplete="{Binding Islands[3].IsComplete}" IsSelected="{Binding Islands[3].IsSelected}"/>
-
-                <!-- 交易島 -->
-                <controls:IslandPointer Center="0.315,0.517" IsComplete="{Binding Islands[4].IsComplete}" IsSelected="{Binding Islands[4].IsSelected}"/>
-
-                <!-- 時計島 -->
-                <controls:IslandPointer Center="0.525,0.497" IsComplete="{Binding Islands[5].IsComplete}" IsSelected="{Binding Islands[5].IsSelected}"/>
-
-                <!-- 砂塊島 -->
-                <controls:IslandPointer Center="0.235,0.477" IsComplete="{Binding Islands[6].IsComplete}" IsSelected="{Binding Islands[6].IsSelected}"/>
-
-                <!-- 灯台島 -->
-                <controls:IslandPointer Center="0.31,0.415" IsComplete="{Binding Islands[7].IsComplete}" IsSelected="{Binding Islands[7].IsSelected}"/>
-
-                <!-- かつての脅威島 -->
-                <controls:IslandPointer Center="0.506,0.583" IsComplete="{Binding Islands[8].IsComplete}" IsSelected="{Binding Islands[8].IsSelected}"/>
-
-                <!-- 墓場島 -->
-                <controls:IslandPointer Center="0.458,0.34" IsComplete="{Binding Islands[9].IsComplete}" IsSelected="{Binding Islands[9].IsSelected}"/>
-
-                <!-- 夜を司る島 -->
-                <controls:IslandPointer Center="0.45,0.634" IsComplete="{Binding Islands[10].IsComplete}" IsSelected="{Binding Islands[10].IsSelected}"/>
-
-                <!-- 匠島 -->
-                <controls:IslandPointer Center="0.465,0.395" IsComplete="{Binding Islands[11].IsComplete}" IsSelected="{Binding Islands[11].IsSelected}"/>
-
-                <!-- イカ島 -->
-                <controls:IslandPointer Center="0.359,0.58" IsComplete="{Binding Islands[12].IsComplete}" IsSelected="{Binding Islands[12].IsSelected}"/>
-
-                <!-- カボチャ島 -->
-                <controls:IslandPointer Center="0.505,0.515" IsComplete="{Binding Islands[13].IsComplete}" IsSelected="{Binding Islands[13].IsSelected}"/>
-
-                <!-- 燃える愛の島 -->
-                <controls:IslandPointer Center="0.426,0.446" IsComplete="{Binding Islands[14].IsComplete}" IsSelected="{Binding Islands[14].IsSelected}"/>
-
-                <!-- かまど島 -->
-                <controls:IslandPointer Center="0.62,0.26" IsComplete="{Binding Islands[15].IsComplete}" IsSelected="{Binding Islands[15].IsSelected}"/>
-
-                <!-- オアシス島 -->
-                <controls:IslandPointer Center="0.237,0.305" IsComplete="{Binding Islands[16].IsComplete}" IsSelected="{Binding Islands[16].IsSelected}"/>
-
-                <!-- 黒曜石の塔の島 -->
-                <controls:IslandPointer Center="0.594,0.426" IsComplete="{Binding Islands[17].IsComplete}" IsSelected="{Binding Islands[17].IsSelected}"/>
-
-                <!-- スティーブ島 -->
-                <controls:IslandPointer Center="0.34,0.365" IsComplete="{Binding Islands[18].IsComplete}" IsSelected="{Binding Islands[18].IsSelected}"/>
-
-                <!-- 蜘蛛島 -->
-                <controls:IslandPointer Center="0.641,0.574" IsComplete="{Binding Islands[19].IsComplete}" IsSelected="{Binding Islands[19].IsSelected}"/>
-
-                <!-- ニコニコ島 -->
-                <controls:IslandPointer Center="0.653,0.47" IsComplete="{Binding Islands[20].IsComplete}" IsSelected="{Binding Islands[20].IsSelected}"/>
-
-                <!-- ケーキ島 -->
-                <controls:IslandPointer Center="0.635,0.42" IsComplete="{Binding Islands[21].IsComplete}" IsSelected="{Binding Islands[21].IsSelected}"/>
-
-                <!-- サボテン島 -->
-                <controls:IslandPointer Center="0.743,0.49" IsComplete="{Binding Islands[22].IsComplete}" IsSelected="{Binding Islands[22].IsSelected}"/>
-
-                <!-- スライム島 -->
-                <controls:IslandPointer Center="0.793,0.587" IsComplete="{Binding Islands[23].IsComplete}" IsSelected="{Binding Islands[23].IsSelected}"/>
-
-                <!-- 大釜＆ホッパー島 -->
-                <controls:IslandPointer Center="0.777,0.317" IsComplete="{Binding Islands[24].IsComplete}" IsSelected="{Binding Islands[24].IsSelected}"/>
-
-                <!-- 作業台島 -->
-                <controls:IslandPointer Center="0.322,0.243" IsComplete="{Binding Islands[25].IsComplete}" IsSelected="{Binding Islands[25].IsSelected}"/>
-
-                <!-- エンダーマン島 -->
-                <controls:IslandPointer Center="0.595,0.65" IsComplete="{Binding Islands[26].IsComplete}" IsSelected="{Binding Islands[26].IsSelected}"/>
-
-                <!-- エンダーチェスト島 -->
-                <controls:IslandPointer Center="0.57,0.277" IsComplete="{Binding Islands[27].IsComplete}" IsSelected="{Binding Islands[27].IsSelected}"/>
-
-                <!-- スケルトン島 -->
-                <controls:IslandPointer Center="0.677,0.531" IsComplete="{Binding Islands[28].IsComplete}" IsSelected="{Binding Islands[28].IsSelected}"/>
-
-                <!-- ボロ屋敷島 -->
-                <controls:IslandPointer Center="0.312,0.469" IsComplete="{Binding Islands[29].IsComplete}" IsSelected="{Binding Islands[29].IsSelected}"/>
-
-                <!-- 豪邸島 -->
-                <controls:IslandPointer Center="0.727,0.407" IsComplete="{Binding Islands[30].IsComplete}" IsSelected="{Binding Islands[30].IsSelected}"/>
-
-                <!-- 逆さ屋敷島 -->
-                <controls:IslandPointer Center="0.555,0.35" IsComplete="{Binding Islands[31].IsComplete}" IsSelected="{Binding Islands[31].IsSelected}"/>
-
-                <!-- 魔女の家島 -->
-                <controls:IslandPointer Center="0.283,0.64" IsComplete="{Binding Islands[32].IsComplete}" IsSelected="{Binding Islands[32].IsSelected}"/>
-
-                <!-- 大木島 -->
-                <controls:IslandPointer Center="0.814,0.767" IsComplete="{Binding Islands[33].IsComplete}" IsSelected="{Binding Islands[33].IsSelected}"/>
-
-                <!-- 筍島 -->
-                <controls:IslandPointer Center="0.743,0.193" IsComplete="{Binding Islands[34].IsComplete}" IsSelected="{Binding Islands[34].IsSelected}"/>
-
-                <!-- 隠里ノ島 -->
-                <controls:IslandPointer Center="0.89,0.186" IsComplete="{Binding Islands[35].IsComplete}" IsSelected="{Binding Islands[35].IsSelected}"/>
-
-                <!-- 旧深淵島 -->
-                <controls:IslandPointer Center="0.246,0.168" IsComplete="{Binding Islands[36].IsComplete}" IsSelected="{Binding Islands[36].IsSelected}"/>
-
-                <!-- エンチャントテーブル島 -->
-                <controls:IslandPointer Center="0.419,0.346" IsComplete="{Binding Islands[37].IsComplete}" IsSelected="{Binding Islands[37].IsSelected}"/>
-
-                <!-- 海賊船島 -->
-                <controls:IslandPointer Center="0.509,0.15" IsComplete="{Binding Islands[38].IsComplete}" IsSelected="{Binding Islands[38].IsSelected}"/>
-
-                <!-- 五重塔島 -->
-                <controls:IslandPointer Center="0.5,0.5" IsComplete="{Binding Islands[39].IsComplete}" IsSelected="{Binding Islands[39].IsSelected}"/>
-
-                <!-- 廃病院島 -->
-                <controls:IslandPointer Center="0.189,0.38" IsComplete="{Binding Islands[40].IsComplete}" IsSelected="{Binding Islands[40].IsSelected}"/>
-
-                <!-- 死神島 -->
-                <controls:IslandPointer Center="0.457,0.808" IsComplete="{Binding Islands[41].IsComplete}" IsSelected="{Binding Islands[41].IsSelected}"/>
-
-                <!-- エンドの入り口島 -->
-                <controls:IslandPointer Center="0.472,0.383" IsComplete="{Binding Islands[42].IsComplete}" IsSelected="{Binding Islands[42].IsSelected}"/>
-
-                <!-- 地下世界 -->
-                <controls:IslandPointer Center="0.182,0.91" IsComplete="{Binding Islands[43].IsComplete}" IsSelected="{Binding Islands[43].IsSelected}"/>
-
-                <!-- ネザー -->
-                <controls:IslandPointer Center="0.498,0.91" IsComplete="{Binding Islands[44].IsComplete}" IsSelected="{Binding Islands[44].IsSelected}"/>
-
-                <!-- ガリバーランド -->
-                <controls:IslandPointer Center="0.718,0.91" IsComplete="{Binding Islands[45].IsComplete}" IsSelected="{Binding Islands[45].IsSelected}"/>
-
-                <!-- クラウディア -->
-                <controls:IslandPointer Center="0.166,0.957" IsComplete="{Binding Islands[46].IsComplete}" IsSelected="{Binding Islands[46].IsSelected}"/>
-
-                <!-- テーブルマウンテン -->
-                <controls:IslandPointer Center="0.318,0.957" IsComplete="{Binding Islands[47].IsComplete}" IsSelected="{Binding Islands[47].IsSelected}"/>
-
-                <!-- トカルトコルデ -->
-                <controls:IslandPointer Center="0.611,0.957" IsComplete="{Binding Islands[48].IsComplete}" IsSelected="{Binding Islands[48].IsSelected}"/>
-
-                <!-- エンド -->
-                <controls:IslandPointer Center="0.85,0.957" IsComplete="{Binding Islands[49].IsComplete}" IsSelected="{Binding Islands[49].IsSelected}"/>
-            </Grid>
+                VerticalAlignment="Center"
+                ItemsSource="{Binding Islands}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </Grid>
-        <Grid Grid.Column="1" Background="#333">
+        <Grid Grid.Column="1" Background="#393939">
             <ListBox x:Name="list" ItemsSource="{Binding Islands}" Style="{StaticResource IslandListStyle}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -185,7 +40,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding Data.Name}" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                            <TextBlock Grid.Column="0" Text="{Binding IslandName}" Foreground="White" VerticalAlignment="Center" Margin="5,0,0,0"/>
                             <Path
                                 x:Name="path"
                                 Grid.Column="1"

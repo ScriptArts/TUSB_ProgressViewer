@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TUSB_ProgressViewer.Controls;
 using TUSB_ProgressViewer.Models;
-using TUSB_ProgressViewer.Util;
 
 namespace TUSB_ProgressViewer.ViewModels
 {
-    public class IslandCompleteProgressViewModel
+    public class EndSpawnerProgressViewModel
     {
         /// <summary>
-        /// 島リスト
+        /// スポナーリスト
         /// </summary>
-        public ReactiveCollection<IslandPointer> Islands => World.Islands;
+        public ReactiveCollection<SpawnerPointer> Spawners => World.Spawners;
     }
 }

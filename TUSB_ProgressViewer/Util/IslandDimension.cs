@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static TUSB_ProgressViewer.Util.EnumExtension;
 
 namespace TUSB_ProgressViewer.Util
 {

@@ -9,7 +9,6 @@
     xmlns:local="clr-namespace:TUSB_ProgressViewer.Controls"
     mc:Ignorable="d" 
     d:DesignHeight="450" d:DesignWidth="800"
-    prism:ViewModelLocator.AutoWireViewModel="True"
     Width="{Binding ActualWidth, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}"
     Height="{Binding ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Grid}}">
     <Grid>
