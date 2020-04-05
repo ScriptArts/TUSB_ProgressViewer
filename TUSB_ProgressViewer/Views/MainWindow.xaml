@@ -7,7 +7,6 @@
     xmlns:behavior="clr-namespace:TUSB_ProgressViewer.Behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:TUSB_ProgressViewer"
     xmlns:controls="clr-namespace:TUSB_ProgressViewer.Controls"
     xmlns:model="clr-namespace:TUSB_ProgressViewer.Models"
     mc:Ignorable="d"
@@ -29,14 +28,14 @@
                         <Image Source="../Resources/end_portal_frame.png" Width="32" Margin="0,5,0,0"/>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                             <TextBlock
-                                Text="{Binding CompletionCount.Value, StringFormat={}{0}/50}"
+                                Text="{Binding Source={x:Static model:IslandsData.CompletionCount}, Path=Value, StringFormat={}{0}/50}"
                                 FontSize="16"
                                 Foreground="White"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Margin="0,0,5,0"/>
                             <TextBlock
-                                Text="{Binding CompletionRate.Value, StringFormat={}{0:0.0}%}"
+                                Text="{Binding Source={x:Static model:IslandsData.CompletionRate}, Path=Value, StringFormat={}{0:0.0}%}"
                                 FontSize="12"
                                 Foreground="White"
                                 HorizontalAlignment="Center"
@@ -52,14 +51,14 @@
                         <Image Source="../Resources/mob_spawner.png" Width="32" Margin="0,5,0,0"/>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                             <TextBlock
-                                Text="{Binding BrokenCount.Value, StringFormat={}{0}/247}"
+                                Text="{Binding Source={x:Static model:SpawnersData.BrokenCount}, Path=Value, StringFormat={}{0}/247}"
                                 FontSize="16"
                                 Foreground="White"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Margin="0,0,5,0"/>
                             <TextBlock
-                                Text="{Binding BrokenRate.Value, StringFormat={}{0:0.0}%}"
+                                Text="{Binding Source={x:Static model:SpawnersData.BrokenRate}, Path=Value, StringFormat={}{0:0.0}%}"
                                 FontSize="12"
                                 Foreground="White"
                                 HorizontalAlignment="Center"
@@ -68,6 +67,21 @@
                     </StackPanel>
                 </TabItem.Header>
                 <controls:EndSpawnerProgress/>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image Source="../Resources/book.png" Width="32" Margin="0,5,0,0"/>
+                        <TextBlock
+                            Text="{Binding Source={x:Static model:ScoreData.PlayerCount}, Path=Value, StringFormat=Players: {0}}"
+                            FontSize="16"
+                            Foreground="White"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="0,0,5,0"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <controls:DataViewer/>
             </TabItem>
         </TabControl>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0">

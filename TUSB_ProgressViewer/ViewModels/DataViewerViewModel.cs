@@ -1,20 +1,19 @@
-﻿using Reactive.Bindings;
+﻿using Prism.Mvvm;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TUSB_ProgressViewer.Controls;
 using TUSB_ProgressViewer.Models;
-using TUSB_ProgressViewer.Util;
 
 namespace TUSB_ProgressViewer.ViewModels
 {
-    public class IslandCompleteProgressViewModel
+    public class DataViewerViewModel : BindableBase
     {
         /// <summary>
-        /// 島リスト
+        /// 選択中プレイヤー
         /// </summary>
-        public ReactiveCollection<IslandPointer> Islands => World.Islands;
+        public ReactiveProperty<Player> SelectedPlayer { get; set; } = new ReactiveProperty<Player>();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using OrangeNBT.World.Anvil;
 using Prism.Mvvm;
+using Reactive.Bindings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace TUSB_ProgressViewer.Models
     /// </summary>
     public class Island: BindableBase
     {
+        /// <summary>
+        /// 島タイプ
+        /// </summary>
         public IslandType IslandType { get; }
 
         /// <summary>
@@ -24,12 +28,7 @@ namespace TUSB_ProgressViewer.Models
         /// <summary>
         /// 選択フラグ
         /// </summary>
-        public bool IsSelected
-        {
-            get => _isSelected;
-            set => SetProperty(ref _isSelected, value);
-        }
-        private bool _isSelected;
+        public bool IsSelected { get; set; }
 
         public Island(IslandType type, AnvilWorld world)
         {

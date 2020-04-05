@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Styles/ScrollBarStyle.xaml"/>
                 <ResourceDictionary Source="Styles/WindowStyle.xaml"/>
                 <ResourceDictionary Source="Styles/IslandListStyle.xaml"/>
+                <ResourceDictionary Source="Styles/DataViewerStyles.xaml"/>
                 <ResourceDictionary Source="Styles/TabControlStyle.xaml"/>
                 <ResourceDictionary Source="Styles/LoadingViewStyle.xaml"/>
                 <ResourceDictionary Source="Styles/ErrorDialogStyle.xaml"/>

@@ -36,31 +36,6 @@ namespace TUSB_ProgressViewer.ViewModels
         /// </summary>
         public ReactiveCommand ErrorDialogCloseCommand { get; } = new ReactiveCommand();
 
-        /// <summary>
-        /// ワールドフォルダ名
-        /// </summary>
-        public ReactiveProperty<string> FolderName => World.FolderName;
-
-        /// <summary>
-        /// 島攻略数
-        /// </summary>
-        public ReactiveProperty<int> CompletionCount => World.CompletionCount;
-
-        /// <summary>
-        /// 島攻略率
-        /// </summary>
-        public ReactiveProperty<double> CompletionRate => World.CompletionRate;
-
-        /// <summary>
-        /// スポナー破壊数
-        /// </summary>
-        public ReactiveProperty<int> BrokenCount => World.BrokenCount;
-
-        /// <summary>
-        /// スポナー破壊率
-        /// </summary>
-        public ReactiveProperty<double> BrokenRate => World.BrokenRate;
-
         public MainWindowViewModel()
         {
             TitlebarButtonCommand.Subscribe(x => Messenger.I.GetEvent<PubSubEvent<string>>().Publish(x));

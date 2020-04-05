@@ -10,7 +10,14 @@ namespace TUSB_ProgressViewer.Models
 {
     public class Spawner
     {
+        /// <summary>
+        /// 座標
+        /// </summary>
         public Coordinate Coordinate { get; set; }
+
+        /// <summary>
+        /// 破壊フラグ
+        /// </summary>
         public bool IsBroken { get; set; }
 
         public Spawner(Coordinate coordinate, AnvilWorld world)

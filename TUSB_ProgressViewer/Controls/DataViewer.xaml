@@ -1,0 +1,60 @@
+﻿<UserControl
+    x:Class="TUSB_ProgressViewer.Controls.DataViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:model="clr-namespace:TUSB_ProgressViewer.Models"
+    xmlns:vm="clr-namespace:TUSB_ProgressViewer.ViewModels">
+    <UserControl.DataContext>
+        <vm:DataViewerViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox
+            ItemsSource="{Binding Source={x:Static model:ScoreData.Players}}"
+            SelectedItem="{Binding SelectedPlayer.Value}"
+            Style="{StaticResource PlayersListStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border>
+                        <TextBlock Text="{Binding Name}"/>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <UniformGrid Grid.Column="1" Columns="1">
+            <UniformGrid Rows="1">
+                <Image Source="../Resources/iron_sword.png" Width="64"/>
+                <TextBlock Text="Knight" Style="{StaticResource JobText}"/>
+                <TextBlock Text="{Binding SelectedPlayer.Value.KnightLevel, StringFormat=Lv.{0}}" Style="{StaticResource JobText}"/>
+            </UniformGrid>
+            <UniformGrid Rows="1">
+                <Image Source="../Resources/snowball.png" Width="64"/>
+                <TextBlock Text="Ninja" Style="{StaticResource JobText}"/>
+                <TextBlock Text="{Binding SelectedPlayer.Value.NinjaLevel, StringFormat=Lv.{0}}" Style="{StaticResource JobText}"/>
+            </UniformGrid>
+            <UniformGrid Rows="1">
+                <Image Source="../Resources/bow.png" Width="64"/>
+                <TextBlock Text="Archer" Style="{StaticResource JobText}"/>
+                <TextBlock Text="{Binding SelectedPlayer.Value.ArcherLevel, StringFormat=Lv.{0}}" Style="{StaticResource JobText}"/>
+            </UniformGrid>
+            <UniformGrid Rows="1">
+                <Image Source="../Resources/carrot_on_a_stick.png" Width="64"/>
+                <TextBlock Text="White Mage" Style="{StaticResource JobText}"/>
+                <TextBlock Text="{Binding SelectedPlayer.Value.WhiteMageLevel, StringFormat=Lv.{0}}" Style="{StaticResource JobText}"/>
+            </UniformGrid>
+            <UniformGrid Rows="1">
+                <Image Source="../Resources/book.png" Width="64"/>
+                <TextBlock Text="Black Mage" Style="{StaticResource JobText}"/>
+                <TextBlock Text="{Binding SelectedPlayer.Value.BlackMageLevel, StringFormat=Lv.{0}}" Style="{StaticResource JobText}"/>
+            </UniformGrid>
+            <UniformGrid Rows="1">
+                <Image Source="../Resources/wolf_spawn_egg.png" Width="64"/>
+                <TextBlock Text="Summoner" Style="{StaticResource JobText}"/>
+                <TextBlock Text="{Binding SelectedPlayer.Value.SummonerLevel, StringFormat=Lv.{0}}" Style="{StaticResource JobText}"/>
+            </UniformGrid>
+        </UniformGrid>
+    </Grid>
+</UserControl>

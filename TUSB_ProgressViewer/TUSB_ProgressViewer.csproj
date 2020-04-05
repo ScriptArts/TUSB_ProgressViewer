@@ -133,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\DataViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\EndSpawnerProgress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DataViewerStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +195,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Behaviors\ScrollViewBehavior.cs" />
+    <Compile Include="Controls\DataViewer.xaml.cs">
+      <DependentUpon>DataViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\EndSpawnerProgress.xaml.cs">
       <DependentUpon>EndSpawnerProgress.xaml</DependentUpon>
     </Compile>
@@ -207,14 +218,17 @@
     <Compile Include="Converters\DoubleSubtractorConverter.cs" />
     <Compile Include="Models\Coordinate.cs" />
     <Compile Include="Models\Island.cs" />
+    <Compile Include="Models\IslandsData.cs" />
     <Compile Include="Models\Spawner.cs" />
+    <Compile Include="Models\SpawnersData.cs" />
+    <Compile Include="Models\ScoreData.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Util\EnumExtension.cs" />
     <Compile Include="Util\IslandDimension.cs" />
     <Compile Include="Util\IslandType.cs" />
     <Compile Include="Util\Messenger.cs" />
     <Compile Include="Models\World.cs" />
-    <Compile Include="ViewModels\EndSpawnerProgressViewModel.cs" />
-    <Compile Include="ViewModels\IslandCompleteProgressViewModel.cs" />
+    <Compile Include="ViewModels\DataViewerViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -256,6 +270,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\bow.png" />
+    <Resource Include="Resources\carrot_on_a_stick.png" />
+    <Resource Include="Resources\iron_sword.png" />
+    <Resource Include="Resources\snowball.png" />
+    <Resource Include="Resources\wolf_spawn_egg.png" />
+    <Resource Include="Resources\book.png" />
     <Resource Include="icon.ico" />
     <Content Include="Lib\OrangeNBT.Data.dll" />
     <Content Include="Lib\OrangeNBT.dll" />

@@ -2,15 +2,7 @@
     x:Class="TUSB_ProgressViewer.Controls.IslandCompleteProgress"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-    xmlns:local="clr-namespace:TUSB_ProgressViewer.Controls"
-    xmlns:controls="clr-namespace:TUSB_ProgressViewer.Controls"
-    xmlns:vm="clr-namespace:TUSB_ProgressViewer.ViewModels"
-    mc:Ignorable="d">
-    <UserControl.DataContext>
-        <vm:IslandCompleteProgressViewModel/>
-    </UserControl.DataContext>
+    xmlns:model="clr-namespace:TUSB_ProgressViewer.Models">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,7 +15,7 @@
                 Height="{Binding ActualHeight, ElementName=map}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                ItemsSource="{Binding Islands}">
+                ItemsSource="{Binding Source={x:Static model:IslandsData.Islands}}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Grid/>
@@ -32,7 +24,7 @@
             </ItemsControl>
         </Grid>
         <Grid Grid.Column="1" Background="#393939">
-            <ListBox x:Name="list" ItemsSource="{Binding Islands}" Style="{StaticResource IslandListStyle}">
+            <ListBox x:Name="list" ItemsSource="{Binding Source={x:Static model:IslandsData.Islands}}" Style="{StaticResource IslandListStyle}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

@@ -58,29 +58,5 @@
                 </Style>
             </Path.Style>
         </Path>
-        <!--<Path Stroke="Black" StrokeThickness="3" Fill="Lime">
-            <Path.Data>
-                <EllipseGeometry
-                    Center="{Binding Center, ElementName=islandPointer}"
-                    RadiusX="0.01"
-                    RadiusY="0.01">
-                    <EllipseGeometry.Transform>
-                        <ScaleTransform ScaleX="{Binding ActualWidth, ElementName=islandPointer}" ScaleY="{Binding ActualHeight, ElementName=islandPointer}"/>
-                    </EllipseGeometry.Transform>
-                </EllipseGeometry>
-            </Path.Data>
-            <Path.Style>
-                <Style TargetType="Path">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsSelected, ElementName=islandPointer}" Value="True">
-                            <Setter Property="Visibility" Value="Visible"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding IsSelected, ElementName=islandPointer}" Value="False">
-                            <Setter Property="Visibility" Value="Hidden"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Path.Style>
-        </Path>-->
     </Grid>
 </UserControl>

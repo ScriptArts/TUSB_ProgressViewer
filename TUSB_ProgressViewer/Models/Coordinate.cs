@@ -11,8 +11,19 @@ namespace TUSB_ProgressViewer.Models
     /// </summary>
     public class Coordinate
     {
+        /// <summary>
+        /// X座標
+        /// </summary>
         public int X { get; }
+
+        /// <summary>
+        /// Y座標
+        /// </summary>
         public int Y { get; }
+
+        /// <summary>
+        /// Z座標
+        /// </summary>
         public int Z { get; }
 
         public Coordinate(int x, int y, int z)
